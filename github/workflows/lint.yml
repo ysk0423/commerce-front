@@ -1,0 +1,20 @@
+name: Linter
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Check source code format
+    runs-on: ubunts-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
