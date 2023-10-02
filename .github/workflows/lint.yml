@@ -25,14 +25,14 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
 
       - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
+        name: Install packages
         continue-on-error: true
-        run: |
-          npm list
-          npm ci
+        run: npm ci
 
       # - name: Install packages
       #   run: npm ci
+      - name: List the state of node modules
+        run: npm list
 
       - name: Lint
         run: npm run lint
