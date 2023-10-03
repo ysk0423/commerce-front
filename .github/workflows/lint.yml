@@ -24,15 +24,8 @@ jobs:
             ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
 
-      - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-        name: Install packages
-        continue-on-error: true
+      - name: Install packages
         run: npm ci
-
-      # - name: Install packages
-      #   run: npm ci
-      - name: List the state of node modules
-        run: npm list
 
       - name: Lint
         run: npm run lint
