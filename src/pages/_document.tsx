@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
         styles: [initialProps.styles, sheet.getStyleElement()],
       }
     } finally {
+      console.log('test')
       sheet.seal()
     }
   }

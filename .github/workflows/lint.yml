@@ -1,0 +1,29 @@
+name: Linter
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  lint:
+    name: Check source code format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#example-using-the-cache-action
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
