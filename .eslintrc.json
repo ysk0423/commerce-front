@@ -10,10 +10,7 @@
     "plugin:import/typescript",
     "plugin:storybook/recommended"
   ],
-  "ignorePatterns": [
-    "**/src/stories/*.tsx",
-    "**/src/stories/*.ts"
-  ],
+  "ignorePatterns": ["**/src/stories/*.tsx", "**/src/stories/*.ts"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "import/order": [
@@ -24,15 +21,6 @@
         }
       }
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "lf",
-        "semi": true,
-        "singleQuote": true,
-        "printWidth": 80,
-        "tabWidth": 2
-      }
-    ]
+    "prettier/prettier": ["error"]
   }
 }
