@@ -10,6 +10,10 @@
     "plugin:import/typescript",
     "plugin:storybook/recommended"
   ],
+  "ignorePatterns": [
+    "**/src/stories/*.tsx",
+    "**/src/stories/*.ts"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "import/order": [
@@ -24,7 +28,7 @@
       "error",
       {
         "endOfLine": "lf",
-        "semi": false,
+        "semi": true,
         "singleQuote": true,
         "printWidth": 80,
         "tabWidth": 2
