@@ -6,3 +6,7 @@ export const User = {
   profileImageUrl: string,
   description: string,
 };
+
+export const ApiContext = {
+  apiRootUrl: string,
+};
