@@ -72,6 +72,12 @@ export type CSSPropertyJustifyContent =
   | 'normal'
   | 'right';
 
+export type CSSPropertyFlexWrap =
+  | CSSPropertyGlobals
+  | 'nowrap'
+  | 'wrap'
+  | 'wrap-reverse';
+
 export type CSSPropertyFlexDirection =
   | CSSPropertyGlobals
   | 'column'
